@@ -16,5 +16,5 @@ class Trello
 	public string BoardName { get; set; }
 	public string CreaterFullName { get; set; }
 	public string CreaterUsername { get; set; }
-	public string Card URL { get; set; }
+	public string CardURL { get; set; }
 }
