@@ -22,6 +22,10 @@ public class Sketch : MonoBehaviour {
 
         //----------------------
         //YOU WILL NEED TO DECLARE SOME VARIABLES HERE SIMILAR TO THE CREATIVE CODING TUTORIAL
+		/* cabb935 */
+		int i = 0; 
+		/* cabb935 */ 
+
 
 
 
