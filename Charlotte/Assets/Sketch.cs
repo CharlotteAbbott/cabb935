@@ -3,7 +3,7 @@ using Pathfinding.Serialization.JsonFx; //make sure you include this using
 
 public class Sketch : MonoBehaviour {
     public GameObject myPrefab;
-    public string _WebsiteURL = "http://{YOUR WEBSITE NAME}.azurewebsites.net/tables/{YOUR TABLE NAME}?zumo-api-version=2.0.0";
+    public string _WebsiteURL = "http://Cabb935.azurewebsites.net/tables/Charlotte19?zumo-api-version=2.0.0";
 
     void Start () {
         //Reguest.GET can be called passing in your ODATA url as a string in the form:
@@ -34,7 +34,25 @@ public class Sketch : MonoBehaviour {
             Debug.Log("This products name is: " + product.ProductName);
             //----------------------
             //YOUR CODE TO INSTANTIATE NEW PREFABS GOES HERE
+			/* Cabb935 */ 
+			int totalCubes = 30;
 
+			float totalDistance = 2.9f;
+
+			float perc = i / (float)totalCubes;
+			float sin = Mathf.Sin(perc * Mathf.PI / 2);
+
+			float x = 1.8f + sin * totalDistance;
+			float y = 5.0f;
+			float z = 0.0f;
+
+			var newCube = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity); //Quaternion is default identity;
+			newCube.GetComponent<CubeScript>().SetSize(.45f * (1.0f - perc));
+			newCube.GetComponent<CubeScript>().rotateSpeed = .2f + perc * 4.0f;
+			newCube.GetComponentInChildren<TextMesh>().text = product.ProductName;
+
+			i++;
+			/* cabb935 */
                 
 
             //----------------------
