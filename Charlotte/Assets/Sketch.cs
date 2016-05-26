@@ -18,7 +18,7 @@ public class Sketch : MonoBehaviour {
         }
 
         //We can now deserialize into an array of objects - in this case the class we created. The deserializer is smart enough to instantiate all the classes and populate the variables based on column name.
-		Trello[] products = JsonReader.Deserialize<Trello[]>(jsonResponse);
+		Trello[] trellos = JsonReader.Deserialize<Trello[]>(jsonResponse);
 
         //----------------------
         //YOU WILL NEED TO DECLARE SOME VARIABLES HERE SIMILAR TO THE CREATIVE CODING TUTORIAL
@@ -32,12 +32,18 @@ public class Sketch : MonoBehaviour {
         //----------------------
 
         //We can now loop through the array of objects and access each object individually
-        foreach (Trello product in products)
+        foreach (Trello trello in trellos)
         {
             //Example of how to use the object
-            Debug.Log("This products name is: " + product.Title);
+            //Debug.Log("This products name is: " + trello.Title);
+
+			/* cabb935 */
+			Debug.Log(trello.Title);
+			/* cabb935 */
+
             //----------------------
             //YOUR CODE TO INSTANTIATE NEW PREFABS GOES HERE
+
 			/* Cabb935 */ 
 			int totalCubes = 30;
 
@@ -53,7 +59,7 @@ public class Sketch : MonoBehaviour {
 			var newCube = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity); //Quaternion is default identity;
 			newCube.GetComponent<CubeScript>().SetSize(.45f * (1.0f - perc));
 			newCube.GetComponent<CubeScript>().rotateSpeed = .2f + perc * 4.0f;
-			newCube.GetComponentInChildren<TextMesh>().text = product.Title;
+			newCube.GetComponentInChildren<TextMesh>().text = trello.Title;
 
 			i++;
 			/* cabb935 */
