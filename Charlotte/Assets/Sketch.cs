@@ -45,7 +45,7 @@ public class Sketch : MonoBehaviour {
             //YOUR CODE TO INSTANTIATE NEW PREFABS GOES HERE
 
 			/* Cabb935 */ 
-			int totalCubes = 30;
+			int totalCubes = 25;
 
 			float totalDistance = 2.9f;
 
